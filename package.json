@@ -1,0 +1,22 @@
+{
+  "name": "GH-7982-node-memory-leak",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "volta": {
+    "node": "16.20.0"
+  },
+  "dependencies": {
+    "@sentry/integrations": "^7.50.0",
+    "@sentry/node": "^7.50.0",
+    "express": "^4.18.2",
+    "express-status-monitor": "^1.3.4"
+  },
+  "devDependencies": {
+    "artillery": "^2.0.0-31"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "load:test": "artillery quick --count 20 --num 10000 --output new.json http://localhost:3000/hello/world"
+  }
+}
